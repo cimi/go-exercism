@@ -3,12 +3,10 @@
 package gigasecond
 
 import (
-	"math"
 	"time"
 )
 
 // AddGigasecond returns a moment in time a gigasecond after the input Time.
 func AddGigasecond(t time.Time) time.Time {
-	gigasecond := time.Duration(int(math.Pow10(9))) * time.Second
-	return t.Add(gigasecond)
+	return t.Add(time.Duration(1e9) * time.Second)
 }

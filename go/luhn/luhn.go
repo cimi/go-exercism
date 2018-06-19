@@ -16,7 +16,7 @@ func UpdateDigit(b byte) byte {
 }
 
 func Luhn(input string) bool {
-	var sum byte = 0
+	var sum byte
 	shouldUpdate := false
 	for i := len(input) - 1; i >= 0; i-- {
 		digit := input[i] - '0'

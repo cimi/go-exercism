@@ -17,7 +17,7 @@ func Square(pos int) (uint64, error) {
 	return board[pos], nil
 }
 
-var total uint64 = 0
+var total uint64
 
 func Total() uint64 {
 	if total == 0 {
