@@ -23,8 +23,10 @@ func randomByte(input string) byte {
 	return input[rand.Intn(len(input))]
 }
 
+const maxTries = 5
+
 func newName() (string, error) {
-	for tries := 0; tries < 1; tries++ {
+	for tries := 0; tries < maxTries; tries++ {
 		name := string([]byte{
 			randomByte(letters),
 			randomByte(letters),
@@ -36,7 +38,7 @@ func newName() (string, error) {
 			return name, nil
 		}
 	}
-	return "", fmt.Errorf("Could not generate new random name after 5 tries")
+	return "", fmt.Errorf("Could not generate an unseen random name after %d tries", maxTries)
 }
 
 func (r *Robot) Name() string {
